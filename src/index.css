@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&family=Roboto:wght@100..900&display=swap');
+
+:root {
+    --font-titulos: "Roboto", sans-serif;
+    --font-cuerpo: "Poppins", sans-serif;
+    --background-color: "#000000";
+    --buttons-color: "#7f6f94";
+
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-titulos);
+    font-weight: 600;
+    color: white;
+
+}
+
+p,
+span,
+a,
+li {
+    font-family: var(--font-cuerpo);
+    font-weight: 500;
+    color:rgb(224, 175, 243);
+}

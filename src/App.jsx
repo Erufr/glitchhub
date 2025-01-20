@@ -1,5 +1,5 @@
-
-import "./index.css"
+import React from "react";
+import "./index.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./pages/Home";
@@ -8,17 +8,13 @@ import { styled } from "@mui/material/styles";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { GlobalProvider } from "../src/context/GlobalContext";
 
-
-
 const BackgroundGradient = styled("div")({
-//  backgroundColor:"#020201",
   minHeight: "100vh",
   width: "100dvw",
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
   alignItems: "center",
-  // color: "white",
 });
 
 const App = () => (
@@ -35,7 +31,7 @@ const App = () => (
         <Footer />
       </GlobalProvider>
     </Router>
-</BackgroundGradient>
+  </BackgroundGradient>
 );
 
 export default App;

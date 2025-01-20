@@ -23,7 +23,6 @@ const styleBand = {
 };
 
 export default function FormDialog() {
-  //estilos para header y footer de card
 
   //menejo de estados
   const { modalState, categoryState, handleEdit } =
@@ -35,7 +34,6 @@ export default function FormDialog() {
     selectedVideo ? selectedVideo.categoria : ""
   );
 
-  //manejo de modificacion
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Valores en target: ", e.target);

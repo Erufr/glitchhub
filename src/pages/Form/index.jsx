@@ -43,7 +43,7 @@ const Form = () => {
       if (videoId) {
         setPrevImage(`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`);
       } else {
-        setPrevImage(""); // Limpia la vista previa si la URL no es válida
+        setPrevImage(""); 
       }
     }
     

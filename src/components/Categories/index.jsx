@@ -13,10 +13,10 @@ const CategoryFilter = () => {
     flexWrap: "wrap",
     mt: ".8em",
     mb: "1em",
-    justifyContent: "center", // Centrado por defecto
+    justifyContent: "center",
     [theme.breakpoints.up("md")]: {
-      justifyContent: "flex-start", // Alineado a la izquierda en desktop
-      ml: "2rem", // Añadir margen izquierdo de 2 rem en desktop
+      justifyContent: "flex-start", 
+      ml: "2rem",
     },
     [theme.breakpoints.down("md")]: {
       gap: ".6em",

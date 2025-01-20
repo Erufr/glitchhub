@@ -31,7 +31,7 @@ const StyledImage = styled("img")(({ theme }) => ({
 const StyledTitle = styled("h1")(({ theme }) => ({
     fontSize: "2.5em", 
     margin: "0",
-    marginTop: "5rem", // Añadido margen superior
+    marginTop: "5rem",
     color: "rgba(255, 255, 255, 0.8)", 
     textShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)", 
     [theme.breakpoints.down("md")]: {

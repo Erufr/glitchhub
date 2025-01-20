@@ -1,9 +1,9 @@
 import React from "react";
-import { Box } from "@mui/material";
-
-
+import { Box, useTheme } from "@mui/material";
 
 const Banner = () => {
+  const theme = useTheme(); 
+
   return (
     <Box
       component="img"
@@ -15,6 +15,9 @@ const Banner = () => {
         height: "auto", 
         maxHeight: "400px", 
         objectFit: "cover", 
+        [theme.breakpoints.down("sm")]: {
+          marginTop: "-5em",
+        },
       }}
     />
   );

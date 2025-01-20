@@ -2,27 +2,19 @@ import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-// Crear el contexto
 const GlobalContext = createContext();
 
-// Proveedor del contexto
 const GlobalProvider = ({ children }) => {
   const [videos, setVideos] = useState([]);
   const [categorias, setCategorias] = useState([]);
   const [filteredVideos, setFilteredVideos] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [error, setError] = useState(null);
-
-  // manejo de rutas
   const navigate = useNavigate();
   const goToHome = () => navigate("/");
   const goToNuevoVideo = () => navigate("/add");
-
-  // manejo de modal
   const [open, setOpen] = useState(false);
-  // manejo de la card seleccionada
   const [selectedVideo, setSelectedVideo] = useState(null);
-
   const handleClickOpen = (video) => {
     setSelectedVideo(video);
     setOpen(true);
@@ -33,7 +25,6 @@ const GlobalProvider = ({ children }) => {
     setOpen(false);
   };
 
-  // manejo de carga de nuevo video 
   const handleSubmit = async (dataForm) => {
     console.log("Datos formulario: ", dataForm)
 
@@ -59,7 +50,6 @@ const GlobalProvider = ({ children }) => {
     console.log("lista de videos, actualizada:", videos)
   }, [videos])
 
-  // manejo de la eliminación de videos
   const handleDelete = async (dataId) => {
     console.log("ID a eliminar: ", dataId)
 
@@ -90,10 +80,8 @@ const GlobalProvider = ({ children }) => {
   const handleEdit = async (updatedVideo) => {
     const { id } = updatedVideo;
     try {
-      // Solicitud PUT a la API para actualizar el video
       await axios.put(`https://678abf23dd587da7ac2b49b1.mockapi.io/api/v1/videos/${id}`, updatedVideo);
       
-      // Actualizar el estado local con el video modificado
       setVideos((videos) =>
         videos.map((video) =>
           video.id === id ? { ...video, ...updatedVideo } : video

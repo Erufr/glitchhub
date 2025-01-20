@@ -1,8 +1,10 @@
-import { styled } from "@mui/material";
+import React from 'react';
+import { styled, useTheme } from "@mui/material";
 import CopyrightOutlinedIcon from "@mui/icons-material/CopyrightOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
+// Estilo para el contenedor del footer
 const StyledFooter = styled("footer")(({ theme }) => ({
   backgroundColor: "transparent",
   padding: "20px",
@@ -18,15 +20,17 @@ const StyledFooter = styled("footer")(({ theme }) => ({
   },
 }));
 
-const StyledSocial = styled("div")({
+// Estilo para la sección de redes sociales
+const StyledSocial = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
   [theme.breakpoints.down("sm")]: {
     justifyContent: "center",
     marginBottom: "10px",
   },
-});
+}));
 
+// Estilo para la lista de redes sociales
 const StyledSocialList = styled("ul")({
   display: "flex",
   flexDirection: "row",
@@ -36,6 +40,7 @@ const StyledSocialList = styled("ul")({
   margin: 0,
 });
 
+// Estilo para los enlaces de redes sociales
 const StyledLink = styled("a")({
   textDecoration: "none",
   color: "#d1f1fd",
@@ -45,7 +50,8 @@ const StyledLink = styled("a")({
   fontSize: "1rem",
 });
 
-const StyledText = styled("h4")({
+// Estilo para el texto del footer
+const StyledText = styled("h4")(({ theme }) => ({
   margin: 0,
   fontSize: "1rem",
   display: "flex",
@@ -55,23 +61,27 @@ const StyledText = styled("h4")({
     justifyContent: "center",
     marginBottom: "10px",
   },
-});
+}));
 
-const StyledImg = styled("img")({
+// Estilo para la imagen del logo
+const StyledImg = styled("img")(({ theme }) => ({
   width: "6em",
   right: 0,
   bottom: 0,
   [theme.breakpoints.down("sm")]: {
     margin: "0 auto",
   },
-});
+}));
 
+// Estilo para el ícono de Vercel
 const VercelIcon = styled("img")({
   width: "1.5em",
   height: "1.5em",
 });
 
+// Componente Footer
 const Footer = () => {
+  const theme = useTheme(); // Accede al tema usando el hook useTheme
   const currentYear = new Date().getFullYear();
   return (
     <StyledFooter>

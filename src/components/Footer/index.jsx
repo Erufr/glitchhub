@@ -3,8 +3,7 @@ import CopyrightOutlinedIcon from "@mui/icons-material/CopyrightOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
-// Estilo para el contenedor del footer
-const StyledFooter = styled("footer")({
+const StyledFooter = styled("footer")(({ theme }) => ({
   backgroundColor: "transparent",
   padding: "20px",
   display: "flex",
@@ -13,15 +12,21 @@ const StyledFooter = styled("footer")({
   flexDirection: "row",
   bottom: 0,
   width: "100%",
-});
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    textAlign: "center",
+  },
+}));
 
-// Estilo para la sección de redes sociales
 const StyledSocial = styled("div")({
   display: "flex",
   flexDirection: "row",
+  [theme.breakpoints.down("sm")]: {
+    justifyContent: "center",
+    marginBottom: "10px",
+  },
 });
 
-// Estilo para la lista de redes sociales
 const StyledSocialList = styled("ul")({
   display: "flex",
   flexDirection: "row",
@@ -31,7 +36,6 @@ const StyledSocialList = styled("ul")({
   margin: 0,
 });
 
-// Estilo para los enlaces de redes sociales
 const StyledLink = styled("a")({
   textDecoration: "none",
   color: "#d1f1fd",
@@ -41,29 +45,32 @@ const StyledLink = styled("a")({
   fontSize: "1rem",
 });
 
-// Estilo para el texto del footer
 const StyledText = styled("h4")({
   margin: 0,
   fontSize: "1rem",
   display: "flex",
   alignItems: "center",
   gap: "0.6em",
+  [theme.breakpoints.down("sm")]: {
+    justifyContent: "center",
+    marginBottom: "10px",
+  },
 });
 
-// Estilo para la imagen del logo
 const StyledImg = styled("img")({
   width: "6em",
   right: 0,
-  bottom: 0
+  bottom: 0,
+  [theme.breakpoints.down("sm")]: {
+    margin: "0 auto",
+  },
 });
 
-// Estilo para el ícono de Vercel
 const VercelIcon = styled("img")({
   width: "1.5em",
   height: "1.5em",
 });
 
-// Componente Footer
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
@@ -94,7 +101,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <VercelIcon src="public\img\vercel.png" alt="Vercel" /> Vercel
+              <VercelIcon src="public/img/vercel.png" alt="Vercel" /> Vercel
             </StyledLink>
           </li>
         </StyledSocialList>
